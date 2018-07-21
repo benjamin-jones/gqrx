@@ -130,21 +130,21 @@ CPlotter::CPlotter(QWidget *parent) : QFrame(parent)
         // level 0: black background
         if (i < 20)
             m_ColorTbl[i].setRgb(0, 0, 0);
-        // level 1: black -> blue
+        // level 1: black -> purple
         else if ((i >= 20) && (i < 70))
-            m_ColorTbl[i].setRgb(0, 0, 140*(i-20)/50);
-        // level 2: blue -> light-blue / greenish
+            m_ColorTbl[i].setRgb(60*(i-20)/50, 40*(i-20)/50, 80*(i-20)/50);
+        // level 2: purple -> plum (more red)
         else if ((i >= 70) && (i < 100))
-            m_ColorTbl[i].setRgb(60*(i-70)/30, 125*(i-70)/30, 115*(i-70)/30 + 140);
-        // level 3: light blue -> yellow
+            m_ColorTbl[i].setRgb(70*(i-70)/30 + 60, 40, 80);
+        // level 3: plum -> light purple
         else if ((i >= 100) && (i < 150))
-            m_ColorTbl[i].setRgb(195*(i-100)/50 + 60, 130*(i-100)/50 + 125, 255-(255*(i-100)/50));
-        // level 4: yellow -> red
+            m_ColorTbl[i].setRgb(100*(i-100)/50 + 70, 70*(i-100)/50 + 40, 130*(i-100)/50 + 80);
+        // level 4: light purple -> tangerine
         else if ((i >= 150) && (i < 250))
-            m_ColorTbl[i].setRgb(255, 255-255*(i-150)/100, 0);
-        // level 5: red -> white
+            m_ColorTbl[i].setRgb(255*(i-150)/100 + 100, 173*(i-150)/100 + 70, 130);
+        // level 5: tangerine -> orange
         else if (i >= 250)
-            m_ColorTbl[i].setRgb(255, 255*(i-250)/5, 255*(i-250)/5);
+            m_ColorTbl[i].setRgb(255, 173, 70);
     }
 
     m_PeakHoldActive = false;
